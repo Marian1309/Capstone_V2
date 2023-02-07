@@ -25,7 +25,8 @@ module.exports = {
       colors: {
         primary: '#6419e6',
         royalblue: '#4169e1',
-        transparent: 'transparent'
+        transparent: 'transparent',
+        categoryGray: '#4a4a4a'
       },
       fontFamily: {
         frizon: 'Frizon',

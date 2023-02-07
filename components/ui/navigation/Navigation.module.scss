@@ -1,0 +1,10 @@
+.navigation {
+  @apply mb-[30px] flex items-center justify-between;
+}
+
+.linksContainer {
+  @apply pl-[10px];
+  .link {
+    @apply py-[10px] px-[15px] text-[20px];
+  }
+}

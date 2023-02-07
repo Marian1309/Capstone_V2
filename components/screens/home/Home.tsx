@@ -1,5 +1,11 @@
-import styles from './Home.module.scss'
+import { Directory } from '@components/ui'
+
+import './Home.module.scss'
 
 export default function Home() {
-  return <div className={styles.homeContainer}>Starter</div>
+  return (
+    <>
+      <Directory />
+    </>
+  )
 }

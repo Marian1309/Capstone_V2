@@ -1,1 +1,1 @@
-export {}
+export * as Crown from './crown.svg'
