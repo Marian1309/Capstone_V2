@@ -1,0 +1,7 @@
+.main {
+  @apply flex h-[100vh] flex-col items-center justify-center text-4xl text-royalblue;
+}
+
+.link {
+  @apply transition-colors hover:text-primary;
+}

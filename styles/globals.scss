@@ -1,0 +1,10 @@
+@import './reset';
+@import './fonts';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-zinc-800 font-jetbrains text-white;
+}
