@@ -1,1 +1,6 @@
-
+.signUpContinaer {
+  @apply flex w-[380px] flex-col;
+  h2 {
+    @apply my-[10px] mx-0;
+  }
+}

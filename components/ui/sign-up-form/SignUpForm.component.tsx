@@ -6,8 +6,10 @@ import {
 } from '@/utils/Firebase'
 import { ToastError } from '@/utils/Toasts'
 
+import { Button } from '../button/Button.component'
 import { FormInput } from '../form-input/FormInput.component'
 
+import styles from './SignUpForm.module.scss'
 import FORM_FIELDS from './formFields.data'
 import { DefaultSignUpFormFields } from './formFields.interface'
 
@@ -52,10 +54,10 @@ export const SignUpForm = () => {
   const resetFormFields = () => setFormFields(DEFAULT_FORM_FIELDS)
 
   return (
-    <>
+    <div className={styles.signUpContainer}>
       <h1>Sign up with your email and password</h1>
 
-      <form onSubmit={handleSubmit} className='text-black'>
+      <form onSubmit={handleSubmit}>
         {FORM_FIELDS.map((field) => {
           const changebleValue = formFields[field.name]
           const props = { value: changebleValue, ...field }
@@ -63,8 +65,10 @@ export const SignUpForm = () => {
           return <FormInput key={field.id} {...props} onChange={handleChange} />
         })}
 
-        <button type='submit'>Submit</button>
+        <Button buttonType='google' type='submit'>
+          Submit
+        </Button>
       </form>
-    </>
+    </div>
   )
 }

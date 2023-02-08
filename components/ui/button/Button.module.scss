@@ -1,0 +1,25 @@
+.buttonContainer {
+  @apply flex h-[50px] w-auto min-w-[165px] cursor-pointer justify-center border-none bg-black text-[15px] font-bold uppercase leading-[50px] tracking-[0.5px] text-white;
+  padding: 0 35px 0 35px;
+
+  &:hover {
+    @apply bg-white text-black;
+    border: 1px solid black;
+  }
+
+  &.googleSignIn {
+    @apply bg-[#4285f4] text-white;
+
+    &:hover {
+      @apply border-none bg-[#357ae8];
+    }
+  }
+
+  &.inverted {
+    @apply border-r-[1px] border-solid border-black bg-white text-black;
+
+    &:hover {
+      @apply border-none bg-black text-white;
+    }
+  }
+}
