@@ -19,6 +19,7 @@
     "outDir": "dist",
     "baseUrl": ".",
     "paths": {
+      "@/utils/*": ["./src/utils/*"],
       "@/*": ["./src/*"],
       "@components/*": ["./components/*"],
       "@fonts": ["./public/fonts"],

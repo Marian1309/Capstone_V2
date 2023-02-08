@@ -1,6 +1,6 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
-import { Home, NotFound } from '@components/screens'
+import { Auth, Home, NotFound } from '@components/screens'
 
 import { Navigation } from '@components/ui'
 
@@ -13,6 +13,10 @@ export default function App() {
     {
       path: '/shop',
       element: <h1>Shop</h1>
+    },
+    {
+      path: '/sign-in',
+      element: <Auth />
     },
     {
       path: '*',

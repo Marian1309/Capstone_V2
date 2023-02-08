@@ -19,6 +19,10 @@ export const Navigation: FC<NavigationProps> = ({ element }) => {
           <Link to='/shop' className={styles.link}>
             Shop
           </Link>
+
+          <Link to='/sign-in' className={styles.link}>
+            Sign in
+          </Link>
         </div>
       </div>
       {element}
