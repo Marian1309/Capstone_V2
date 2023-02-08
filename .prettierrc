@@ -16,6 +16,7 @@
     "^@/hooks",
     "^@/slices",
     "^@/utils",
+    "^@interfaces",
     "^@types",
     "^@icons",
     "^@styles/(.*)$",

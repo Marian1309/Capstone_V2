@@ -1,6 +1,14 @@
 import { initializeApp } from 'firebase/app'
-import { GoogleAuthProvider, User, getAuth, signInWithPopup } from 'firebase/auth'
+import {
+  GoogleAuthProvider,
+  User,
+  createUserWithEmailAndPassword,
+  getAuth,
+  signInWithPopup
+} from 'firebase/auth'
 import { doc, getDoc, getFirestore, setDoc } from 'firebase/firestore'
+
+import { ToastError } from './Toasts'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -26,7 +34,14 @@ export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider)
 
 export const db = getFirestore()
 
-export const createUserDocumentFromAuth = async (userAuth: User) => {
+export const createUserDocumentFromAuth = async (
+  userAuth: User,
+  additionlInfo: any = {}
+) => {
+  if (!userAuth) {
+    return
+  }
+
   const userDocRef = doc(db, 'users', userAuth.uid)
   const userSnapshot = await getDoc(userDocRef)
   // have method exists, whick helps us to know wheather a user exists or not
@@ -39,12 +54,23 @@ export const createUserDocumentFromAuth = async (userAuth: User) => {
       await setDoc(userDocRef, {
         displayName,
         email,
-        createdAt
+        createdAt,
+        ...additionlInfo
       })
     } catch (err: any) {
-      throw new Error(err.message)
+      ToastError(err.message)
     }
   }
 
   return userDocRef
+}
+
+export const createAuthUserWithEmailAndPassword = async (
+  email: string,
+  password: string
+) => {
+  if (!email || !password) {
+    return
+  }
+  createUserWithEmailAndPassword(auth, email, password)
 }

@@ -1,9 +1,9 @@
-import { SignIn } from '@components/ui'
+import { SignIn, SignUpForm } from '@components/ui'
 
 const Auth = () => {
   return (
     <>
-      <SignIn />
+      <SignUpForm />
     </>
   )
 }

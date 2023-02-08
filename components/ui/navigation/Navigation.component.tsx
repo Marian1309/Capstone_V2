@@ -1,19 +1,16 @@
-import { FC, ReactNode } from 'react'
+import { FC } from 'react'
 import { Link } from 'react-router-dom'
 
-import { Crown } from '@icons'
+import { crown } from '@icons'
 
+import { NavigationProps } from './Navigation.interface'
 import styles from './Navigation.module.scss'
-
-interface NavigationProps {
-  element: ReactNode
-}
 
 export const Navigation: FC<NavigationProps> = ({ element }) => {
   return (
     <>
       <div className={styles.navigation}>
-        <img src={Crown.default} alt='logo' />
+        <img src={crown.default} alt='logo' />
 
         <div className={styles.linksContainer}>
           <Link to='/shop' className={styles.link}>

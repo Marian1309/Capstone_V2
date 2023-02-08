@@ -1,6 +1,6 @@
 import styles from './Directory.module.scss'
-import CATEGORIES from './categories.json'
-import { CategoryItem } from './category-item/CategoryItem'
+import CATEGORIES from './categories.data'
+import { CategoryItem } from './category-item/CategoryItem.component'
 
 export const Directory = () => {
   return (

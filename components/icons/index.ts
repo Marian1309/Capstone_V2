@@ -1,1 +1,1 @@
-export * from '../icons/spinner/Spinner'
+export {}

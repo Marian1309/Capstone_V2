@@ -25,7 +25,8 @@
       "@fonts": ["./public/fonts"],
       "@icons": ["./public/icons"],
       "@styles/*": ["./styles/*"],
-      "@types": ["./@types.ts"]
+      "@types": ["./@types.ts"],
+      "@interfaces": ["./@interfaces.ts"]
     },
     "types": ["vitest/globals"]
   },
