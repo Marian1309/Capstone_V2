@@ -15,7 +15,7 @@ export default function App() {
       element: <h1>Shop</h1>
     },
     {
-      path: '/sign-in',
+      path: '/auth',
       element: <Navigation element={<Auth />} />
     },
     {

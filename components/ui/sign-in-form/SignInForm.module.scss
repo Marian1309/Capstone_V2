@@ -1,0 +1,13 @@
+.buttonsContainer {
+  @apply flex items-center justify-between;
+}
+
+.signInContainer {
+  @apply font-bold text-black;
+  h2 {
+    @apply pb-[10px] font-frizon text-[20px];
+  }
+  span {
+    @apply text-[12px];
+  }
+}

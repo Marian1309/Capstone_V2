@@ -1,10 +1,13 @@
+@mixin BorderOpposite {
+  @apply bg-white text-black;
+  border: 1px solid black;
+}
+
 .buttonContainer {
-  @apply flex h-[50px] w-auto min-w-[165px] cursor-pointer justify-center border-none bg-black text-[15px] font-bold uppercase leading-[50px] tracking-[0.5px] text-white;
-  padding: 0 35px 0 35px;
+  @apply flex h-[50px] w-auto min-w-[150px] cursor-pointer justify-center border-none bg-black text-[10px] font-bold uppercase leading-[50px] tracking-[0.5px] text-white;
 
   &:hover {
-    @apply bg-white text-black;
-    border: 1px solid black;
+    @include BorderOpposite();
   }
 
   &.googleSignIn {
@@ -16,7 +19,7 @@
   }
 
   &.inverted {
-    @apply border-r-[1px] border-solid border-black bg-white text-black;
+    @include BorderOpposite();
 
     &:hover {
       @apply border-none bg-black text-white;

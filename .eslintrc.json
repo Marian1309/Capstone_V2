@@ -26,7 +26,6 @@
     "no-console": "warn",
     "sort-imports": "off",
     // Best practices
-    "dot-notation": "error",
     "no-else-return": "error",
     "no-floating-decimal": "error",
     "no-sequences": "error",
@@ -75,7 +74,8 @@
     "@typescript-eslint/no-inferrable-types": "off",
     "react/jsx-sort-props": "off",
     "@typescript-eslint/no-empty-interface": "off",
-    "dot-notation": "off"
+    "dot-notation": "off",
+    "@typescript-eslint/no-explicit-any": "off"
   },
 
   "settings": {

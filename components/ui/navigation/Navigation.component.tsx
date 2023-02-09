@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
 
-import { crown } from '@icons'
+import { Logo } from '@components/icons'
 
 import { NavigationProps } from './Navigation.interface'
 import styles from './Navigation.module.scss'
@@ -10,7 +10,7 @@ export const Navigation: FC<NavigationProps> = ({ element }) => {
   return (
     <>
       <div className={styles.navigation}>
-        <img src={crown.default} alt='logo' />
+        <Logo />
 
         <div className={styles.linksContainer}>
           <Link to='/shop' className={styles.link}>

@@ -1,5 +1,5 @@
 export * from './directory/Directory.component'
 export * from './navigation/Navigation.component'
-export * from './sign-in-form/SignInForm'
+export * from './sign-in-form/SignInForm.component'
 export * from './sign-up-form/SignUpForm.component'
 export * from './form-input/FormInput.component'

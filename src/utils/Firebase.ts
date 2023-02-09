@@ -4,6 +4,7 @@ import {
   User,
   createUserWithEmailAndPassword,
   getAuth,
+  signInWithEmailAndPassword,
   signInWithPopup
 } from 'firebase/auth'
 import { doc, getDoc, getFirestore, setDoc } from 'firebase/firestore'
@@ -72,5 +73,15 @@ export const createAuthUserWithEmailAndPassword = async (
   if (!email || !password) {
     return
   }
-  createUserWithEmailAndPassword(auth, email, password)
+  return await createUserWithEmailAndPassword(auth, email, password)
+}
+
+export const signInAuthUserWithEmailAndPassword = async (
+  email: string,
+  password: string
+) => {
+  if (!email || !password) {
+    return
+  }
+  return await signInWithEmailAndPassword(auth, email, password)
 }

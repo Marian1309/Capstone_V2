@@ -55,19 +55,19 @@ export const SignUpForm = () => {
 
   return (
     <div className={styles.signUpContainer}>
-      <h1>Sign up with your email and password</h1>
+      <h2>Do not have an account?</h2>
+      <span>Sign up with your email and password</span>
 
       <form onSubmit={handleSubmit}>
-        {FORM_FIELDS.map((field) => {
-          const changebleValue = formFields[field.name]
-          const props = { value: changebleValue, ...field }
+        {FORM_FIELDS.map((field) => (
+          <FormInput
+            key={field.id}
+            {...{ value: formFields[field.name], ...field }}
+            onChange={handleChange}
+          />
+        ))}
 
-          return <FormInput key={field.id} {...props} onChange={handleChange} />
-        })}
-
-        <Button buttonType='google' type='submit'>
-          Submit
-        </Button>
+        <Button type='submit'>Sign Up</Button>
       </form>
     </div>
   )

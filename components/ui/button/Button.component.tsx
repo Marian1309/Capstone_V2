@@ -9,10 +9,14 @@ const BUTTON_TYPE_CLASSES: ButtonTypeClasses = {
   inverted: 'inverted'
 }
 
-export const Button: FC<ButtonProps> = ({ children, buttonType, ...otherProps }) => {
+export const Button: FC<ButtonProps> = ({
+  children,
+  buttonType = 'inverted',
+  ...otherProps
+}) => {
   return (
     <button
-      className={clsx(styles.buttonContainer, BUTTON_TYPE_CLASSES[buttonType])}
+      className={clsx(styles.buttonContainer, styles[BUTTON_TYPE_CLASSES[buttonType]])}
       {...otherProps}
     >
       {children}
