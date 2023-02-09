@@ -20,6 +20,7 @@
     "baseUrl": ".",
     "paths": {
       "@/utils/*": ["./src/utils/*"],
+      "@store": ["./src/store.ts"],
       "@/*": ["./src/*"],
       "@components/*": ["./components/*"],
       "@fonts": ["./public/fonts"],

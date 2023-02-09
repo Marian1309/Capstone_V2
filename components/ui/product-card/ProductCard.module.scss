@@ -1,0 +1,35 @@
+.productCardContainer {
+  @apply relative flex h-[350px] w-[100%] flex-col items-center;
+
+  img {
+    @apply mb-[5px] h-[95%] w-[100%];
+    object-fit: cover;
+  }
+
+  button {
+    @apply absolute top-[255px] w-[80%] opacity-70;
+    display: none;
+  }
+
+  &:hover {
+    img {
+      @apply opacity-80;
+    }
+
+    button {
+      @apply flex opacity-90;
+    }
+  }
+
+  .footer {
+    @apply flex h-[5%] w-[100%] justify-between text-[18px];
+
+    .name {
+      @apply mb-[15px] w-[90%];
+    }
+
+    .price {
+      @apply w-[10%];
+    }
+  }
+}

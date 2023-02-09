@@ -45,6 +45,8 @@ export const SignUpForm = () => {
     } catch (err: any) {
       if (err.code === 'auth/email-already-in-use') {
         ToastError('Cannot create a user, email already in use')
+      } else if (err.code === 'popup-closed-by-user') {
+        ToastError('Popup closed by the User')
       } else {
         ToastError(err.code)
       }

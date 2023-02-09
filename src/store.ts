@@ -1,11 +1,15 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { combineReducers, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
 
-import counterSlice from './slices/counterSlice'
+import ProductsSlice from './slices/products/ProductsSlice'
+import userSlice from './slices/user/userSlice'
 
-const allReducers = combineReducers({ counter: counterSlice })
+const allReducers = combineReducers({ user: userSlice, products: ProductsSlice })
 
 const store = configureStore({
-  reducer: allReducers
+  reducer: allReducers,
+  middleware: getDefaultMiddleware({
+    serializableCheck: false
+  })
 })
 
 export default store

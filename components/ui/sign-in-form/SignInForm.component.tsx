@@ -1,7 +1,12 @@
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+
+import { AppDispatch } from '@store'
+
+import { setCurrentUser } from '@/slices'
 
 import {
-  createUserDocumentFromAuth,
+  onAuthStateChangedListener,
   signInAuthUserWithEmailAndPassword,
   signInWithGooglePopup
 } from '@/utils/Firebase'
@@ -23,6 +28,13 @@ export const SignInForm = () => {
   const [formFields, setFormFields] =
     useState<DefaultSignInFormFields>(DEFAULT_FORM_FIELDS)
   const { email, password } = formFields
+  const dispatch = useDispatch<AppDispatch>()
+
+  useEffect(() => {
+    onAuthStateChangedListener((user: any) => {
+      dispatch(setCurrentUser({ user }))
+    })
+  }, [])
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
@@ -33,7 +45,7 @@ export const SignInForm = () => {
     e.preventDefault()
 
     try {
-      const { user }: any = await signInAuthUserWithEmailAndPassword(email, password)
+      await signInAuthUserWithEmailAndPassword(email, password)
 
       resetFormFields()
     } catch (err: any) {
@@ -48,8 +60,7 @@ export const SignInForm = () => {
   }
 
   const signInWithGoogle = async () => {
-    const { user }: any = await signInWithGooglePopup()
-    await createUserDocumentFromAuth(user)
+    await signInWithGooglePopup()
   }
 
   const resetFormFields = () => setFormFields(DEFAULT_FORM_FIELDS)

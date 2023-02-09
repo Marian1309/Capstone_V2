@@ -1,6 +1,6 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
-import { Auth, Home, NotFound } from '@components/screens'
+import { Auth, Home, NotFound, Shop } from '@components/screens'
 
 import { Navigation } from '@components/ui'
 
@@ -12,7 +12,7 @@ export default function App() {
     },
     {
       path: '/shop',
-      element: <h1>Shop</h1>
+      element: <Navigation element={<Shop />} />
     },
     {
       path: '/auth',

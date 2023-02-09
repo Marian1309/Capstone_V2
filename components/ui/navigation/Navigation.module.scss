@@ -5,6 +5,6 @@
 .linksContainer {
   @apply pl-[10px];
   .link {
-    @apply py-[10px] px-[15px] text-[20px];
+    @apply cursor-pointer py-[10px] px-[15px] text-[20px];
   }
 }
