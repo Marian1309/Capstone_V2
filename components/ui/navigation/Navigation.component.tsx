@@ -1,18 +1,30 @@
 import { FC } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import { GlobalState } from '@store'
+import { AppDispatch, GlobalState } from '@store'
 
 import { Logo } from '@components/icons'
 
+import { setCartIsOpen } from '@/slices/cart/CartSlice'
+
 import { signOutUser } from '@/utils/Firebase'
+
+import { CardDropdown } from '../card-dropdown/CardDropdown.component'
+import { CardIcon } from '../card-icon/CardIcon.component'
 
 import { NavigationProps } from './Navigation.interface'
 import styles from './Navigation.module.scss'
 
 export const Navigation: FC<NavigationProps> = ({ element }) => {
   const currentUser = useSelector((state: GlobalState) => state.user.currentUser)
+  const isCartOpen = useSelector((state: GlobalState) => state.cart.isCartOpen)
+
+  const dispatch = useDispatch<AppDispatch>()
+
+  const toggleIsCartOpen = () => {
+    dispatch(setCartIsOpen())
+  }
 
   return (
     <>
@@ -33,7 +45,10 @@ export const Navigation: FC<NavigationProps> = ({ element }) => {
               Sign in
             </Link>
           )}
+
+          <CardIcon onClick={toggleIsCartOpen} />
         </div>
+        {isCartOpen && <CardDropdown />}
       </div>
       {element}
     </>

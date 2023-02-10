@@ -1,9 +1,14 @@
 import { combineReducers, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
 
-import ProductsSlice from './slices/products/ProductsSlice'
+import CartSlice from './slices/cart/CartSlice'
+import productsSlice from './slices/products/productsSlice'
 import userSlice from './slices/user/userSlice'
 
-const allReducers = combineReducers({ user: userSlice, products: ProductsSlice })
+const allReducers = combineReducers({
+  user: userSlice,
+  products: productsSlice,
+  cart: CartSlice
+})
 
 const store = configureStore({
   reducer: allReducers,

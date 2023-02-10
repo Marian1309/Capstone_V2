@@ -1,0 +1,11 @@
+.cartIconContainer {
+  @apply relative flex h-[45px] w-[45px] cursor-pointer items-center justify-center;
+
+  .shoppingIcon {
+    @apply h-[24px] w-[24px];
+  }
+
+  .itemCount {
+    @apply absolute bottom-[12px] text-[10px] font-bold;
+  }
+}

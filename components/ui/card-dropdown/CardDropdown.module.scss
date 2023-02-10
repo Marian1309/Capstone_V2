@@ -1,0 +1,16 @@
+.cardDropdownContainer {
+  @apply absolute top-[90px] right-[40px] z-[5] flex h-[340px] w-[240px] flex-col bg-white p-[20px];
+  border: 1px solid black;
+
+  .emptyMessage {
+    @apply my-[50px] mx-auto text-[18px];
+  }
+
+  .emptyMessage {
+    @apply flex h-[240px] flex-col overflow-scroll;
+  }
+
+  button {
+    @apply mt-auto;
+  }
+}
