@@ -1,11 +1,9 @@
 import { Link } from 'react-router-dom'
 
-import { crown } from '@icons'
-
 export const Logo = () => {
   return (
     <Link to='/'>
-      <img src={crown.default} alt='logo' />
+      <img src='/icons/crown.svg' alt='logo' />
     </Link>
   )
 }

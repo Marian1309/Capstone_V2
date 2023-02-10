@@ -3,10 +3,10 @@
   border: 1px solid black;
 
   .emptyMessage {
-    @apply my-[50px] mx-auto text-[18px];
+    @apply flex items-center justify-center text-[15px];
   }
 
-  .emptyMessage {
+  .cartItems {
     @apply flex h-[240px] flex-col overflow-scroll;
   }
 

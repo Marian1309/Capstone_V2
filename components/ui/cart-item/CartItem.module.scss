@@ -1,0 +1,15 @@
+.cartItemContainer {
+  @apply mb-[15px] flex h-[80px] w-[100%];
+
+  img {
+    @apply w-[30%];
+  }
+
+  .itemDetails {
+    @apply flex w-[70%] flex-col items-start justify-center py-[10px] px-[20px];
+
+    .name {
+      @apply text-[16px];
+    }
+  }
+}
